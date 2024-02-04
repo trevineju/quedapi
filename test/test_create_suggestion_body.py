@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.create_suggestion_body import CreateSuggestionBody  # noqa: E501
+from quedapi.models.create_suggestion_body import CreateSuggestionBody  # noqa: E501
 
 class TestCreateSuggestionBody(unittest.TestCase):
     """CreateSuggestionBody unit test stubs"""

@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.company import Company  # noqa: E501
+from quedapi.models.company import Company  # noqa: E501
 
 class TestCompany(unittest.TestCase):
     """Company unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.default_api import DefaultApi  # noqa: E501
+from quedapi.api.default_api import DefaultApi  # noqa: E501
 
 
 class TestDefaultApi(unittest.TestCase):

@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.partner import Partner  # noqa: E501
+from quedapi.models.partner import Partner  # noqa: E501
 
 class TestPartner(unittest.TestCase):
     """Partner unit test stubs"""

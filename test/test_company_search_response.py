@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.company_search_response import CompanySearchResponse  # noqa: E501
+from quedapi.models.company_search_response import CompanySearchResponse  # noqa: E501
 
 class TestCompanySearchResponse(unittest.TestCase):
     """CompanySearchResponse unit test stubs"""
@@ -36,7 +36,7 @@ class TestCompanySearchResponse(unittest.TestCase):
         model = CompanySearchResponse()  # noqa: E501
         if include_optional:
             return CompanySearchResponse(
-                cnpj_info = openapi_client.models.company.Company(
+                cnpj_info = quedapi.models.company.Company(
                     cnpj_basico = '', 
                     cnpj_ordem = '', 
                     cnpj_dv = '', 
@@ -81,7 +81,7 @@ class TestCompanySearchResponse(unittest.TestCase):
             )
         else:
             return CompanySearchResponse(
-                cnpj_info = openapi_client.models.company.Company(
+                cnpj_info = quedapi.models.company.Company(
                     cnpj_basico = '', 
                     cnpj_ordem = '', 
                     cnpj_dv = '', 

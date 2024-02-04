@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.gazette_item import GazetteItem
+from quedapi.models.gazette_item import GazetteItem
 
 # TODO update the JSON string below
 json = "{}"

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.http_exception_message import HTTPExceptionMessage
+from quedapi.models.http_exception_message import HTTPExceptionMessage
 
 # TODO update the JSON string below
 json = "{}"

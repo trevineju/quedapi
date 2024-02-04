@@ -18,16 +18,17 @@ import re  # noqa: F401
 import json
 
 
+from typing import List
+from pydantic import BaseModel, Field, StrictInt, conlist
+from quedapi.models.themed_excerpt_item import ThemedExcerptItem
 
-from pydantic import BaseModel, Field
-from openapi_client.models.company import Company
-
-class CompanySearchResponse(BaseModel):
+class ThemedExcerptSearchResponse(BaseModel):
     """
-    CompanySearchResponse
+    ThemedExcerptSearchResponse
     """
-    cnpj_info: Company = Field(...)
-    __properties = ["cnpj_info"]
+    total_excerpts: StrictInt = Field(...)
+    excerpts: conlist(ThemedExcerptItem) = Field(...)
+    __properties = ["total_excerpts", "excerpts"]
 
     class Config:
         """Pydantic configuration"""
@@ -43,8 +44,8 @@ class CompanySearchResponse(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> CompanySearchResponse:
-        """Create an instance of CompanySearchResponse from a JSON string"""
+    def from_json(cls, json_str: str) -> ThemedExcerptSearchResponse:
+        """Create an instance of ThemedExcerptSearchResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -53,22 +54,27 @@ class CompanySearchResponse(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of cnpj_info
-        if self.cnpj_info:
-            _dict['cnpj_info'] = self.cnpj_info.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in excerpts (list)
+        _items = []
+        if self.excerpts:
+            for _item in self.excerpts:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['excerpts'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> CompanySearchResponse:
-        """Create an instance of CompanySearchResponse from a dict"""
+    def from_dict(cls, obj: dict) -> ThemedExcerptSearchResponse:
+        """Create an instance of ThemedExcerptSearchResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return CompanySearchResponse.parse_obj(obj)
+            return ThemedExcerptSearchResponse.parse_obj(obj)
 
-        _obj = CompanySearchResponse.parse_obj({
-            "cnpj_info": Company.from_dict(obj.get("cnpj_info")) if obj.get("cnpj_info") is not None else None
+        _obj = ThemedExcerptSearchResponse.parse_obj({
+            "total_excerpts": obj.get("total_excerpts"),
+            "excerpts": [ThemedExcerptItem.from_dict(_item) for _item in obj.get("excerpts")] if obj.get("excerpts") is not None else None
         })
         return _obj
 

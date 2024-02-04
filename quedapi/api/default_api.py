@@ -25,22 +25,22 @@ from pydantic import Field, StrictInt, StrictStr, conlist
 
 from typing import Any, Optional
 
-from openapi_client.models.cities_search_response import CitiesSearchResponse
-from openapi_client.models.city_level import CityLevel
-from openapi_client.models.city_search_response import CitySearchResponse
-from openapi_client.models.company_search_response import CompanySearchResponse
-from openapi_client.models.create_suggestion_body import CreateSuggestionBody
-from openapi_client.models.created_suggestion_response import CreatedSuggestionResponse
-from openapi_client.models.entities_search_response import EntitiesSearchResponse
-from openapi_client.models.gazette_search_response import GazetteSearchResponse
-from openapi_client.models.partners_search_response import PartnersSearchResponse
-from openapi_client.models.subthemes_search_response import SubthemesSearchResponse
-from openapi_client.models.themed_excerpt_search_response import ThemedExcerptSearchResponse
-from openapi_client.models.themes_search_response import ThemesSearchResponse
+from quedapi.models.cities_search_response import CitiesSearchResponse
+from quedapi.models.city_level import CityLevel
+from quedapi.models.city_search_response import CitySearchResponse
+from quedapi.models.company_search_response import CompanySearchResponse
+from quedapi.models.create_suggestion_body import CreateSuggestionBody
+from quedapi.models.created_suggestion_response import CreatedSuggestionResponse
+from quedapi.models.entities_search_response import EntitiesSearchResponse
+from quedapi.models.gazette_search_response import GazetteSearchResponse
+from quedapi.models.partners_search_response import PartnersSearchResponse
+from quedapi.models.subthemes_search_response import SubthemesSearchResponse
+from quedapi.models.themed_excerpt_search_response import ThemedExcerptSearchResponse
+from quedapi.models.themes_search_response import ThemesSearchResponse
 
-from openapi_client.api_client import ApiClient
-from openapi_client.api_response import ApiResponse
-from openapi_client.exceptions import (  # noqa: F401
+from quedapi.api_client import ApiClient
+from quedapi.api_response import ApiResponse
+from quedapi.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

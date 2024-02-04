@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.created_suggestion_response import CreatedSuggestionResponse  # noqa: E501
+from quedapi.models.created_suggestion_response import CreatedSuggestionResponse  # noqa: E501
 
 class TestCreatedSuggestionResponse(unittest.TestCase):
     """CreatedSuggestionResponse unit test stubs"""

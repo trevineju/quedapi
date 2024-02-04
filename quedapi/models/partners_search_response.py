@@ -20,7 +20,7 @@ import json
 
 from typing import List
 from pydantic import BaseModel, Field, StrictInt, conlist
-from openapi_client.models.partner import Partner
+from quedapi.models.partner import Partner
 
 class PartnersSearchResponse(BaseModel):
     """

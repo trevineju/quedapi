@@ -20,7 +20,7 @@ import json
 
 from typing import List, Optional
 from pydantic import BaseModel, Field, StrictStr, conlist
-from openapi_client.models.city_level import CityLevel
+from quedapi.models.city_level import CityLevel
 
 class City(BaseModel):
     """

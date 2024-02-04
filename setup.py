@@ -45,5 +45,5 @@ setup(
     long_description="""\
     API to access the gazettes from all Brazilian cities
     """,  # noqa: E501
-    package_data={"openapi_client": ["py.typed"]},
+    package_data={"quedapi": ["py.typed"]},
 )

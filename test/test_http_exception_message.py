@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.http_exception_message import HTTPExceptionMessage  # noqa: E501
+from quedapi.models.http_exception_message import HTTPExceptionMessage  # noqa: E501
 
 class TestHTTPExceptionMessage(unittest.TestCase):
     """HTTPExceptionMessage unit test stubs"""

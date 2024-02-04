@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.gazette_item import GazetteItem  # noqa: E501
+from quedapi.models.gazette_item import GazetteItem  # noqa: E501
 
 class TestGazetteItem(unittest.TestCase):
     """GazetteItem unit test stubs"""

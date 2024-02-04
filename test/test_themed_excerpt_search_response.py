@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.themed_excerpt_search_response import ThemedExcerptSearchResponse  # noqa: E501
+from quedapi.models.themed_excerpt_search_response import ThemedExcerptSearchResponse  # noqa: E501
 
 class TestThemedExcerptSearchResponse(unittest.TestCase):
     """ThemedExcerptSearchResponse unit test stubs"""
@@ -38,7 +38,7 @@ class TestThemedExcerptSearchResponse(unittest.TestCase):
             return ThemedExcerptSearchResponse(
                 total_excerpts = 56,
                 excerpts = [
-                    openapi_client.models.themed_excerpt_item.ThemedExcerptItem(
+                    quedapi.models.themed_excerpt_item.ThemedExcerptItem(
                         territory_id = '', 
                         date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
                         scraped_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -61,7 +61,7 @@ class TestThemedExcerptSearchResponse(unittest.TestCase):
             return ThemedExcerptSearchResponse(
                 total_excerpts = 56,
                 excerpts = [
-                    openapi_client.models.themed_excerpt_item.ThemedExcerptItem(
+                    quedapi.models.themed_excerpt_item.ThemedExcerptItem(
                         territory_id = '', 
                         date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
                         scraped_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

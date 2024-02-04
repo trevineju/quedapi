@@ -18,16 +18,16 @@ import re  # noqa: F401
 import json
 
 
-from typing import List
-from pydantic import BaseModel, Field, conlist
-from openapi_client.models.city import City
+from typing import List, Optional
+from pydantic import BaseModel, conlist
+from quedapi.models.validation_error import ValidationError
 
-class CitiesSearchResponse(BaseModel):
+class HTTPValidationError(BaseModel):
     """
-    CitiesSearchResponse
+    HTTPValidationError
     """
-    cities: conlist(City) = Field(...)
-    __properties = ["cities"]
+    detail: Optional[conlist(ValidationError)] = None
+    __properties = ["detail"]
 
     class Config:
         """Pydantic configuration"""
@@ -43,8 +43,8 @@ class CitiesSearchResponse(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> CitiesSearchResponse:
-        """Create an instance of CitiesSearchResponse from a JSON string"""
+    def from_json(cls, json_str: str) -> HTTPValidationError:
+        """Create an instance of HTTPValidationError from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -53,26 +53,26 @@ class CitiesSearchResponse(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of each item in cities (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in detail (list)
         _items = []
-        if self.cities:
-            for _item in self.cities:
+        if self.detail:
+            for _item in self.detail:
                 if _item:
                     _items.append(_item.to_dict())
-            _dict['cities'] = _items
+            _dict['detail'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> CitiesSearchResponse:
-        """Create an instance of CitiesSearchResponse from a dict"""
+    def from_dict(cls, obj: dict) -> HTTPValidationError:
+        """Create an instance of HTTPValidationError from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return CitiesSearchResponse.parse_obj(obj)
+            return HTTPValidationError.parse_obj(obj)
 
-        _obj = CitiesSearchResponse.parse_obj({
-            "cities": [City.from_dict(_item) for _item in obj.get("cities")] if obj.get("cities") is not None else None
+        _obj = HTTPValidationError.parse_obj({
+            "detail": [ValidationError.from_dict(_item) for _item in obj.get("detail")] if obj.get("detail") is not None else None
         })
         return _obj
 

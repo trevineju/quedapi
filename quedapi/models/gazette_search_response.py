@@ -18,16 +18,17 @@ import re  # noqa: F401
 import json
 
 
-from typing import List, Optional
-from pydantic import BaseModel, conlist
-from openapi_client.models.validation_error import ValidationError
+from typing import List
+from pydantic import BaseModel, Field, StrictInt, conlist
+from quedapi.models.gazette_item import GazetteItem
 
-class HTTPValidationError(BaseModel):
+class GazetteSearchResponse(BaseModel):
     """
-    HTTPValidationError
+    GazetteSearchResponse
     """
-    detail: Optional[conlist(ValidationError)] = None
-    __properties = ["detail"]
+    total_gazettes: StrictInt = Field(...)
+    gazettes: conlist(GazetteItem) = Field(...)
+    __properties = ["total_gazettes", "gazettes"]
 
     class Config:
         """Pydantic configuration"""
@@ -43,8 +44,8 @@ class HTTPValidationError(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> HTTPValidationError:
-        """Create an instance of HTTPValidationError from a JSON string"""
+    def from_json(cls, json_str: str) -> GazetteSearchResponse:
+        """Create an instance of GazetteSearchResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -53,26 +54,27 @@ class HTTPValidationError(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of each item in detail (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in gazettes (list)
         _items = []
-        if self.detail:
-            for _item in self.detail:
+        if self.gazettes:
+            for _item in self.gazettes:
                 if _item:
                     _items.append(_item.to_dict())
-            _dict['detail'] = _items
+            _dict['gazettes'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> HTTPValidationError:
-        """Create an instance of HTTPValidationError from a dict"""
+    def from_dict(cls, obj: dict) -> GazetteSearchResponse:
+        """Create an instance of GazetteSearchResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return HTTPValidationError.parse_obj(obj)
+            return GazetteSearchResponse.parse_obj(obj)
 
-        _obj = HTTPValidationError.parse_obj({
-            "detail": [ValidationError.from_dict(_item) for _item in obj.get("detail")] if obj.get("detail") is not None else None
+        _obj = GazetteSearchResponse.parse_obj({
+            "total_gazettes": obj.get("total_gazettes"),
+            "gazettes": [GazetteItem.from_dict(_item) for _item in obj.get("gazettes")] if obj.get("gazettes") is not None else None
         })
         return _obj
 

@@ -1,4 +1,4 @@
-# openapi_client.DefaultApi
+# quedapi.DefaultApi
 
 All URIs are relative to *https://queridodiario.ok.org.br/api*
 
@@ -28,22 +28,22 @@ Get all available entities of a theme that can be used to search in gazettes by 
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.entities_search_response import EntitiesSearchResponse
-from openapi_client.rest import ApiException
+import quedapi
+from quedapi.models.entities_search_response import EntitiesSearchResponse
+from quedapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://queridodiario.ok.org.br/api
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = quedapi.Configuration(
     host = "https://queridodiario.ok.org.br/api"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with quedapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DefaultApi(api_client)
+    api_instance = quedapi.DefaultApi(api_client)
     theme = 'theme_example' # str | Theme that can be used to search in gazettes by theme.
 
     try:
@@ -97,22 +97,22 @@ Get all available subthemes of a theme that can be used to search in gazettes by
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.subthemes_search_response import SubthemesSearchResponse
-from openapi_client.rest import ApiException
+import quedapi
+from quedapi.models.subthemes_search_response import SubthemesSearchResponse
+from quedapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://queridodiario.ok.org.br/api
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = quedapi.Configuration(
     host = "https://queridodiario.ok.org.br/api"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with quedapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DefaultApi(api_client)
+    api_instance = quedapi.DefaultApi(api_client)
     theme = 'theme_example' # str | Theme that can be used to search in gazettes by theme.
 
     try:
@@ -166,22 +166,22 @@ Get all available themes that can be used to search in gazettes by theme.
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.themes_search_response import ThemesSearchResponse
-from openapi_client.rest import ApiException
+import quedapi
+from quedapi.models.themes_search_response import ThemesSearchResponse
+from quedapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://queridodiario.ok.org.br/api
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = quedapi.Configuration(
     host = "https://queridodiario.ok.org.br/api"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with quedapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DefaultApi(api_client)
+    api_instance = quedapi.DefaultApi(api_client)
 
     try:
         # Get All Available Themes
@@ -229,22 +229,22 @@ Get general info from specific city with 7-digit IBGE ID.
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.city_search_response import CitySearchResponse
-from openapi_client.rest import ApiException
+import quedapi
+from quedapi.models.city_search_response import CitySearchResponse
+from quedapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://queridodiario.ok.org.br/api
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = quedapi.Configuration(
     host = "https://queridodiario.ok.org.br/api"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with quedapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DefaultApi(api_client)
+    api_instance = quedapi.DefaultApi(api_client)
     territory_id = 'territory_id_example' # str | City's 7-digit IBGE ID.
 
     try:
@@ -298,22 +298,22 @@ Get info from specific company by its CNPJ number.
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.company_search_response import CompanySearchResponse
-from openapi_client.rest import ApiException
+import quedapi
+from quedapi.models.company_search_response import CompanySearchResponse
+from quedapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://queridodiario.ok.org.br/api
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = quedapi.Configuration(
     host = "https://queridodiario.ok.org.br/api"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with quedapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DefaultApi(api_client)
+    api_instance = quedapi.DefaultApi(api_client)
     cnpj = 'cnpj_example' # str | Company's CNPJ number (may include non-digit characters).
 
     try:
@@ -368,22 +368,22 @@ Get info of partners of a company by its CNPJ number.
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.partners_search_response import PartnersSearchResponse
-from openapi_client.rest import ApiException
+import quedapi
+from quedapi.models.partners_search_response import PartnersSearchResponse
+from quedapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://queridodiario.ok.org.br/api
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = quedapi.Configuration(
     host = "https://queridodiario.ok.org.br/api"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with quedapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DefaultApi(api_client)
+    api_instance = quedapi.DefaultApi(api_client)
     cnpj = 'cnpj_example' # str | Company's CNPJ number (may include non-digit characters).
 
     try:
@@ -437,23 +437,23 @@ Search for cities with a name similar to the city_name query.
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.cities_search_response import CitiesSearchResponse
-from openapi_client.models.city_level import CityLevel
-from openapi_client.rest import ApiException
+import quedapi
+from quedapi.models.cities_search_response import CitiesSearchResponse
+from quedapi.models.city_level import CityLevel
+from quedapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://queridodiario.ok.org.br/api
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = quedapi.Configuration(
     host = "https://queridodiario.ok.org.br/api"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with quedapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DefaultApi(api_client)
+    api_instance = quedapi.DefaultApi(api_client)
     city_name = '' # str | Search for cities with a similar name (empty field returns all cities). (optional) (default to '')
     levels = [""] # List[CityLevel] | Search for cities within the same openness level (empty field returns from all levels) (optional) (default to [""])
 
@@ -508,22 +508,22 @@ Search for content in excerpts from available cities that are related to an avai
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.themed_excerpt_search_response import ThemedExcerptSearchResponse
-from openapi_client.rest import ApiException
+import quedapi
+from quedapi.models.themed_excerpt_search_response import ThemedExcerptSearchResponse
+from quedapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://queridodiario.ok.org.br/api
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = quedapi.Configuration(
     host = "https://queridodiario.ok.org.br/api"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with quedapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DefaultApi(api_client)
+    api_instance = quedapi.DefaultApi(api_client)
     theme = 'theme_example' # str | Search in excerpts from gazettes that are associated to the given theme.
     entities = [] # List[str] | Search in excerpts which contains any of the given entities (entities are theme-specific). (optional) (default to [])
     subthemes = [] # List[str] | Search in excerpts which contains any of the given subthemes (subthemes are theme-specific). (optional) (default to [])
@@ -537,7 +537,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     post_tags = [""] # List[str] | List of strings (usually HTML tags) to be inserted after the text which matches the query in the excerpts. (optional) (default to [""])
     size = 10 # int | Maximum number of results to be returned in the response (use with caution). (optional) (default to 10)
     offset = 0 # int | Number of search results to be skipped in the response. (optional) (default to 0)
-    sort_by = openapi_client.SortBy() # SortBy | How to sort the search results. (optional)
+    sort_by = quedapi.SortBy() # SortBy | How to sort the search results. (optional)
 
     try:
         # Search For Content In Gazette Excerpts Associated With A Theme
@@ -603,22 +603,22 @@ Search for content in published gazettes from available cities. Each search resu
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.gazette_search_response import GazetteSearchResponse
-from openapi_client.rest import ApiException
+import quedapi
+from quedapi.models.gazette_search_response import GazetteSearchResponse
+from quedapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://queridodiario.ok.org.br/api
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = quedapi.Configuration(
     host = "https://queridodiario.ok.org.br/api"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with quedapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DefaultApi(api_client)
+    api_instance = quedapi.DefaultApi(api_client)
     territory_ids = [] # List[str] | Search in gazettes published by cities with the given 7-digit IBGE IDs (an empty field searches in all available cities). (optional) (default to [])
     published_since = '2013-10-20' # date | Search in gazettes published on given date or after (format: YYYY-MM-DD). (optional)
     published_until = '2013-10-20' # date | Search in gazettes published on given date or before (format: YYYY-MM-DD). (optional)
@@ -631,7 +631,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     post_tags = [""] # List[str] | List of strings (usually HTML tags) to be inserted after the text which matches the query in the excerpts. (optional) (default to [""])
     size = 10 # int | Maximum number of results to be returned in the response (use with caution). (optional) (default to 10)
     offset = 0 # int | Number of search results to be skipped in the response. (optional) (default to 0)
-    sort_by = openapi_client.SortBy() # SortBy | How to sort the search results. (optional)
+    sort_by = quedapi.SortBy() # SortBy | How to sort the search results. (optional)
 
     try:
         # Search For Content In Gazettes
@@ -695,24 +695,24 @@ Send a suggestion to the project
 ```python
 import time
 import os
-import openapi_client
-from openapi_client.models.create_suggestion_body import CreateSuggestionBody
-from openapi_client.models.created_suggestion_response import CreatedSuggestionResponse
-from openapi_client.rest import ApiException
+import quedapi
+from quedapi.models.create_suggestion_body import CreateSuggestionBody
+from quedapi.models.created_suggestion_response import CreatedSuggestionResponse
+from quedapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://queridodiario.ok.org.br/api
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = quedapi.Configuration(
     host = "https://queridodiario.ok.org.br/api"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with quedapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DefaultApi(api_client)
-    create_suggestion_body = openapi_client.CreateSuggestionBody() # CreateSuggestionBody | 
+    api_instance = quedapi.DefaultApi(api_client)
+    create_suggestion_body = quedapi.CreateSuggestionBody() # CreateSuggestionBody | 
 
     try:
         # Send A Suggestion

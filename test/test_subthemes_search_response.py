@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.subthemes_search_response import SubthemesSearchResponse  # noqa: E501
+from quedapi.models.subthemes_search_response import SubthemesSearchResponse  # noqa: E501
 
 class TestSubthemesSearchResponse(unittest.TestCase):
     """SubthemesSearchResponse unit test stubs"""

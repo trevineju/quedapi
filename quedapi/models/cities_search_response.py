@@ -18,16 +18,16 @@ import re  # noqa: F401
 import json
 
 
+from typing import List
+from pydantic import BaseModel, Field, conlist
+from quedapi.models.city import City
 
-from pydantic import BaseModel, Field
-from openapi_client.models.city import City
-
-class CitySearchResponse(BaseModel):
+class CitiesSearchResponse(BaseModel):
     """
-    CitySearchResponse
+    CitiesSearchResponse
     """
-    city: City = Field(...)
-    __properties = ["city"]
+    cities: conlist(City) = Field(...)
+    __properties = ["cities"]
 
     class Config:
         """Pydantic configuration"""
@@ -43,8 +43,8 @@ class CitySearchResponse(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> CitySearchResponse:
-        """Create an instance of CitySearchResponse from a JSON string"""
+    def from_json(cls, json_str: str) -> CitiesSearchResponse:
+        """Create an instance of CitiesSearchResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -53,22 +53,26 @@ class CitySearchResponse(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of city
-        if self.city:
-            _dict['city'] = self.city.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in cities (list)
+        _items = []
+        if self.cities:
+            for _item in self.cities:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['cities'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> CitySearchResponse:
-        """Create an instance of CitySearchResponse from a dict"""
+    def from_dict(cls, obj: dict) -> CitiesSearchResponse:
+        """Create an instance of CitiesSearchResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return CitySearchResponse.parse_obj(obj)
+            return CitiesSearchResponse.parse_obj(obj)
 
-        _obj = CitySearchResponse.parse_obj({
-            "city": City.from_dict(obj.get("city")) if obj.get("city") is not None else None
+        _obj = CitiesSearchResponse.parse_obj({
+            "cities": [City.from_dict(_item) for _item in obj.get("cities")] if obj.get("cities") is not None else None
         })
         return _obj
 

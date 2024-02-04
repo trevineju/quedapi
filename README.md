@@ -23,7 +23,7 @@ pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
 
 Then import the package:
 ```python
-import openapi_client
+import quedapi
 ```
 
 ### Setuptools
@@ -37,7 +37,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import openapi_client
+import quedapi
 ```
 
 ### Tests
@@ -51,22 +51,22 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 
 import time
-import openapi_client
-from openapi_client.rest import ApiException
+import quedapi
+from quedapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://queridodiario.ok.org.br/api
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = quedapi.Configuration(
     host = "https://queridodiario.ok.org.br/api"
 )
 
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with quedapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DefaultApi(api_client)
+    api_instance = quedapi.DefaultApi(api_client)
     theme = 'theme_example' # str | Theme that can be used to search in gazettes by theme.
 
     try:

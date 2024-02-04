@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.validation_error import ValidationError  # noqa: E501
+from quedapi.models.validation_error import ValidationError  # noqa: E501
 
 class TestValidationError(unittest.TestCase):
     """ValidationError unit test stubs"""

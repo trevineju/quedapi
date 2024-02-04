@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.partners_search_response import PartnersSearchResponse  # noqa: E501
+from quedapi.models.partners_search_response import PartnersSearchResponse  # noqa: E501
 
 class TestPartnersSearchResponse(unittest.TestCase):
     """PartnersSearchResponse unit test stubs"""
@@ -38,7 +38,7 @@ class TestPartnersSearchResponse(unittest.TestCase):
             return PartnersSearchResponse(
                 total_partners = 56,
                 partners = [
-                    openapi_client.models.partner.Partner(
+                    quedapi.models.partner.Partner(
                         cnpj_basico = '', 
                         cnpj_ordem = '', 
                         cnpj_dv = '', 
@@ -60,7 +60,7 @@ class TestPartnersSearchResponse(unittest.TestCase):
             return PartnersSearchResponse(
                 total_partners = 56,
                 partners = [
-                    openapi_client.models.partner.Partner(
+                    quedapi.models.partner.Partner(
                         cnpj_basico = '', 
                         cnpj_ordem = '', 
                         cnpj_dv = '', 

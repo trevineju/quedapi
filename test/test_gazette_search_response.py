@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.gazette_search_response import GazetteSearchResponse  # noqa: E501
+from quedapi.models.gazette_search_response import GazetteSearchResponse  # noqa: E501
 
 class TestGazetteSearchResponse(unittest.TestCase):
     """GazetteSearchResponse unit test stubs"""
@@ -38,7 +38,7 @@ class TestGazetteSearchResponse(unittest.TestCase):
             return GazetteSearchResponse(
                 total_gazettes = 56,
                 gazettes = [
-                    openapi_client.models.gazette_item.GazetteItem(
+                    quedapi.models.gazette_item.GazetteItem(
                         territory_id = '', 
                         date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
                         scraped_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -57,7 +57,7 @@ class TestGazetteSearchResponse(unittest.TestCase):
             return GazetteSearchResponse(
                 total_gazettes = 56,
                 gazettes = [
-                    openapi_client.models.gazette_item.GazetteItem(
+                    quedapi.models.gazette_item.GazetteItem(
                         territory_id = '', 
                         date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
                         scraped_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

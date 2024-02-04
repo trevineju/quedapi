@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.themed_excerpt_item import ThemedExcerptItem  # noqa: E501
+from quedapi.models.themed_excerpt_item import ThemedExcerptItem  # noqa: E501
 
 class TestThemedExcerptItem(unittest.TestCase):
     """ThemedExcerptItem unit test stubs"""

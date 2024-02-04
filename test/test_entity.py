@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.entity import Entity  # noqa: E501
+from quedapi.models.entity import Entity  # noqa: E501
 
 class TestEntity(unittest.TestCase):
     """Entity unit test stubs"""

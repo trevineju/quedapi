@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.city_search_response import CitySearchResponse  # noqa: E501
+from quedapi.models.city_search_response import CitySearchResponse  # noqa: E501
 
 class TestCitySearchResponse(unittest.TestCase):
     """CitySearchResponse unit test stubs"""
@@ -36,7 +36,7 @@ class TestCitySearchResponse(unittest.TestCase):
         model = CitySearchResponse()  # noqa: E501
         if include_optional:
             return CitySearchResponse(
-                city = openapi_client.models.city.City(
+                city = quedapi.models.city.City(
                     territory_id = '', 
                     territory_name = '', 
                     state_code = '', 
@@ -47,7 +47,7 @@ class TestCitySearchResponse(unittest.TestCase):
             )
         else:
             return CitySearchResponse(
-                city = openapi_client.models.city.City(
+                city = quedapi.models.city.City(
                     territory_id = '', 
                     territory_name = '', 
                     state_code = '', 

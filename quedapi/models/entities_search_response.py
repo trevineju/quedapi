@@ -19,16 +19,15 @@ import json
 
 
 from typing import List
-from pydantic import BaseModel, Field, StrictInt, conlist
-from openapi_client.models.themed_excerpt_item import ThemedExcerptItem
+from pydantic import BaseModel, Field, conlist
+from quedapi.models.entity import Entity
 
-class ThemedExcerptSearchResponse(BaseModel):
+class EntitiesSearchResponse(BaseModel):
     """
-    ThemedExcerptSearchResponse
+    EntitiesSearchResponse
     """
-    total_excerpts: StrictInt = Field(...)
-    excerpts: conlist(ThemedExcerptItem) = Field(...)
-    __properties = ["total_excerpts", "excerpts"]
+    entities: conlist(Entity) = Field(...)
+    __properties = ["entities"]
 
     class Config:
         """Pydantic configuration"""
@@ -44,8 +43,8 @@ class ThemedExcerptSearchResponse(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> ThemedExcerptSearchResponse:
-        """Create an instance of ThemedExcerptSearchResponse from a JSON string"""
+    def from_json(cls, json_str: str) -> EntitiesSearchResponse:
+        """Create an instance of EntitiesSearchResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -54,27 +53,26 @@ class ThemedExcerptSearchResponse(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of each item in excerpts (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in entities (list)
         _items = []
-        if self.excerpts:
-            for _item in self.excerpts:
+        if self.entities:
+            for _item in self.entities:
                 if _item:
                     _items.append(_item.to_dict())
-            _dict['excerpts'] = _items
+            _dict['entities'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> ThemedExcerptSearchResponse:
-        """Create an instance of ThemedExcerptSearchResponse from a dict"""
+    def from_dict(cls, obj: dict) -> EntitiesSearchResponse:
+        """Create an instance of EntitiesSearchResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return ThemedExcerptSearchResponse.parse_obj(obj)
+            return EntitiesSearchResponse.parse_obj(obj)
 
-        _obj = ThemedExcerptSearchResponse.parse_obj({
-            "total_excerpts": obj.get("total_excerpts"),
-            "excerpts": [ThemedExcerptItem.from_dict(_item) for _item in obj.get("excerpts")] if obj.get("excerpts") is not None else None
+        _obj = EntitiesSearchResponse.parse_obj({
+            "entities": [Entity.from_dict(_item) for _item in obj.get("entities")] if obj.get("entities") is not None else None
         })
         return _obj
 

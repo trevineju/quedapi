@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.sort_by import SortBy  # noqa: E501
+from quedapi.models.sort_by import SortBy  # noqa: E501
 
 class TestSortBy(unittest.TestCase):
     """SortBy unit test stubs"""

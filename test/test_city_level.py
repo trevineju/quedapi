@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.city_level import CityLevel  # noqa: E501
+from quedapi.models.city_level import CityLevel  # noqa: E501
 
 class TestCityLevel(unittest.TestCase):
     """CityLevel unit test stubs"""

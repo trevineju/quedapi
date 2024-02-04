@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.partners_search_response import PartnersSearchResponse
+from quedapi.models.partners_search_response import PartnersSearchResponse
 
 # TODO update the JSON string below
 json = "{}"

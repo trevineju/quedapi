@@ -15,7 +15,7 @@
 import unittest
 import datetime
 
-from openapi_client.models.entities_search_response import EntitiesSearchResponse  # noqa: E501
+from quedapi.models.entities_search_response import EntitiesSearchResponse  # noqa: E501
 
 class TestEntitiesSearchResponse(unittest.TestCase):
     """EntitiesSearchResponse unit test stubs"""
@@ -37,7 +37,7 @@ class TestEntitiesSearchResponse(unittest.TestCase):
         if include_optional:
             return EntitiesSearchResponse(
                 entities = [
-                    openapi_client.models.entity.Entity(
+                    quedapi.models.entity.Entity(
                         entity_type = '', 
                         entity_type_description = '', 
                         entities = [
@@ -48,7 +48,7 @@ class TestEntitiesSearchResponse(unittest.TestCase):
         else:
             return EntitiesSearchResponse(
                 entities = [
-                    openapi_client.models.entity.Entity(
+                    quedapi.models.entity.Entity(
                         entity_type = '', 
                         entity_type_description = '', 
                         entities = [

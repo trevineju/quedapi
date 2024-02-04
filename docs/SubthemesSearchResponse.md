@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.subthemes_search_response import SubthemesSearchResponse
+from quedapi.models.subthemes_search_response import SubthemesSearchResponse
 
 # TODO update the JSON string below
 json = "{}"
